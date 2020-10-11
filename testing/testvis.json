@@ -11,7 +11,7 @@
       "x": {
           "bin": true,
           "field": "a",
-          "type": 'ordinal'
+          "type": "ordinal"
       },
       "y": {"aggregate": "count"}
       },
