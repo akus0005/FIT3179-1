@@ -1,12 +1,15 @@
 {
  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
       "description": 'sample vis trying to learn',
-      "data": {"url":   'https://mdudley98.github.io/FIT3179/earthquakes.csv'},
+      "data": {"values": [
+              {"a":"1"}, {"a":"2"}, {"a":"2"}, {"a":"2"}, {"a":"1"}, {"a":"1"}, {"a":"1"}
+          ]},
       "mark": "bar",
       "encoding": {
           "x": {
               "bin": true,
-              "field": "Magnitude"
+              "field": "a",
+              "type": "ordinal"
           },
           "y": {"aggregate": "count"}
       }
