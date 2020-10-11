@@ -9,9 +9,7 @@
     "mark": "bar",
     "encoding": {
       "x": {
-          "bin": true,
-          "field": "a",
-          "type": "ordinal"
+          "field": "a"
       },
       "y": {"aggregate": "count"}
       },
