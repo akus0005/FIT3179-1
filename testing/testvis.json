@@ -5,7 +5,7 @@
   },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "Magnitude", "type": "nominal", "axis": {"labelAngle": 0}, "bin": {"step": 1},
+    "x": {"field": "Magnitude", "type": "nominal", "axis": {"labelAngle": 0}, "bin": {"step": 1}},
     "y": {"aggregate" : "count"}
   },
   "config" : {}
