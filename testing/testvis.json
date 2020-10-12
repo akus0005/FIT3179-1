@@ -1,1 +1,12 @@
-
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": { "url" : "https://mdudley98.github.io/FIT3179/testing/earthquakes.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Magnitude", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"aggregate" : "count"}
+  },
+  "config" : {}
+  }
