@@ -2,14 +2,12 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "description": "sample vis trying to learn.",
     "data": {
-          "values": [
-              {"a":"1"}, {"a":"2"}, {"a":"2"}, {"a":"2"}, {"a":"1"}, {"a":"1"}, {"a":"1"}
-          ]
+          "url": "https://mdudley98.github.io/FIT3179/testing/earthquakes.csv"
       },
     "mark": "bar",
     "encoding": {
       "x": {
-          "field": "a"
+          "field": "Magnitude"
       },
       "y": {"aggregate": "count"}
       },
