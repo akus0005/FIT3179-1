@@ -7,7 +7,8 @@
     "mark": "bar",
     "encoding": {
       "x": {
-          "field": "Magnitude"
+          "field": "Magnitude",
+          "type": "nominal"
       },
       "y": {"aggregate": "count"}
       },
