@@ -1,0 +1,56 @@
+{
+      "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+      "width": 800,
+      "height": 600,
+      "title": "Happiness Score of 119 Surveyed Counties",
+      "projection": {"type": "equirectangular"},
+      "params": [
+      {
+        "name": "alcohol_selection",
+        
+        "bind":{
+          "input": "select", "options": ["Beer", "Wine", "Spirits", "Total"]
+        }}],
+        "layer": [
+        {
+          "data": {
+            "url": "https://mdudley98.github.io/FIT3179/ne_110m_admin_0_countries.topojson",
+            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+          },
+          "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+        },
+        {
+          "data": {
+            "url": "https://mdudley98.github.io/FIT3179/ne_110m_admin_0_countries.topojson",
+            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+          },
+
+          "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://mdudley98.github.io/FIT3179/alcoholHappiness2.csv"
+              },
+              "key": "Country",
+              "fields": ["HappinessScore", "HappinessRank", "Alcohol", "Consumption"]
+            }
+          },
+          {"filter": "datum.Alcohol==alcohol_selection"}
+
+          ],
+          "mark": {"type": "geoshape"},
+          "encoding": {
+            "color":{
+              "field": "Consumption",
+              "type": "quantitative",
+              "scale": {
+                "scheme": {"name": "blues"}
+              }
+            },
+            "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "Consumption", "type": "quantitative", "title": "Consumption (Per Capita)"},
+            {"field": "Alcohol", "type": "nominal", "title": "Alcohol Type"}]
+          }}],
+          }
