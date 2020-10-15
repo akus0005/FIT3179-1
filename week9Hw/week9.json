@@ -3,7 +3,7 @@
      "width": 800,
      "height": 600,
      "title": "Happiness Score of 119 Surveyed Counties",
-     "projection": {"type": "equirectangular"},
+     "projection": {"type": "equalEarth"},
      "layer": [
      {
       "data": {
