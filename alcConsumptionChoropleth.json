@@ -52,5 +52,5 @@
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
             {"field": "Consumption", "type": "quantitative", "title": "Consumption (Per Capita)"},
             {"field": "Alcohol", "type": "nominal", "title": "Alcohol Type"}]
-          }}],
+          }}]
           }
