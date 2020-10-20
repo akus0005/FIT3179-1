@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "Alcohol Consumption and Happiness Rank",
+  "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness2.csv"},
+  "params": [
+    {
+      "name": "Highlight_Region",
+      "type": "multi",
+      "fields": ["Region"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australia and New Zealand",
+          "Central and Eastern Europe",
+          "Eastern Asia",
+          "Latin America and Caribbean",
+          "Middle East and Northern Africa",
+          "North America",
+          "North America",
+          "Southeastern Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ]
+      },
+      "title": "Highlight Region"
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "HappinessRank",
+      "type": "ordinal",
+      "sort": ["1", "2"],
+      "axis": {"labelAngle": 0, "labelOverlap": "parity"}
+    },
+    "y": {
+      "field": "Alcohol",
+      "type": "nominal",
+      "sort": ["Beer", "Wine", "Spirits"]
+    },
+    "color": {
+      "field": "Consumption",
+      "type": "quantitative",
+      "scale": {"scheme": "yelloworangebrown"}
+    },
+    "opacity": {
+      "condition": {
+        "test": "datum['Region'] == Highlight_Region || Highlight_Region == null",
+        "value": 1
+      },
+      "value": 0.1
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Alcohol", "type": "nominal"},
+      {"field": "HappinessRank", "type": "ordinal", "title": "Happiness Rank"},
+      {
+        "field": "Consumption",
+        "type": "quantitative",
+        "title": "Consumption (per capita)"
+      }
+    ]
+  },
+  "config": {}
+}
