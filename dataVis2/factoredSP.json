@@ -4,7 +4,6 @@
   "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness.csv"},
   "padding": 150,
   "transform": [{"calculate": "datum[Parameter_Selection]", "as": "Parameter"}],
-  "height": "container",
   "width": "container",
   "params": [
     {
