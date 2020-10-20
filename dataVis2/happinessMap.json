@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "height": "container",
   "title": "Happiness Score of 119 Surveyed Counties",
   "projection": {"type": "equalEarth"},
   "params": [
