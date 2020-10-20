@@ -9,8 +9,9 @@
       "value": "TotalAlc",
       "bind": {
         "input": "select",
-        "options": ["Beer", "Wine", "Spirit", "TotalAlc"],
-        "name": "Alcohol Type"
+        "options": ["TotalAlc", "Beer", "Wine", "Spirit"],
+        "name": "Alcohol Type",
+        "labels": ["Total Alcohol","Beer", "Wine", "Spirit"]
       }
     }
   ],
