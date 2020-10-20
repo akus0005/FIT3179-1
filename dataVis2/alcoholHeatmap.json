@@ -23,9 +23,10 @@
           "Southeastern Asia",
           "Sub-Saharan Africa",
           "Western Europe"
-        ]
-      },
-      "title": "Highlight Region"
+        ],
+        "name": "Highlight Region",
+        "labels": ["All"]
+      }
     }
   ],
   "mark": "rect",
