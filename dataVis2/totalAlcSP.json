@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "title": "Alcohol Consumption by Type and Happiness Rank",
+  "title": "Alcohol Consumption by \nType and Happiness Rank",
   "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness.csv"},
   "mark": {"type": "circle", "size": "60"},
   "selection": {
