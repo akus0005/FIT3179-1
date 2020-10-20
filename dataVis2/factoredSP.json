@@ -19,7 +19,15 @@
           "GovernmentTrust",
           "Generosity"
         ],
-        "name": "Select Parameter"
+        "name": "Select Parameter",
+        "labels": [
+          "GDP Per Capita",
+          "Family",
+          "Life Expectancy",
+          "Freedom",
+          "Government Trust",
+          "Generosity"
+        ]
       }
     }
   ],
