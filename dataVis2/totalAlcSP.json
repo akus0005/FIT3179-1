@@ -1,53 +1,77 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": "container",
-  "title": ["Alcohol Consumption by", "Type and Happiness Rank"],
-  "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness.csv"},
-  "mark": {"type": "circle", "size": "60"},
-  "selection": {
-    "region_select": {"type": "single", "fields": ["Region"], "bind": "legend"}
-  },
-  "encoding": {
-    "x": {
-      "field": "HappinessRank",
-      "type": "quantitative",
-      "sort": "ascending",
-      "axis": {"labelAngle": 0, "labelOverlap": "parity"}
-    },
-    "y": {
-      "field": "TotalAlcPerCapita",
-      "type": "quantitative",
-      "axis": {"labelOverlap": "parity"}
-    },
-    "color": {
-      "field": "Region",
-      "scale": {
-        "range": [
-          "#e41a1c",
-          "#377eb8",
-          "#4daf4a",
-          "#984ea3",
-          "#ff7f00",
-          "#ffff33",
-          "#a65628",
-          "#f781bf",
-          "#999999"
-        ]
-      }
-    },
-    "opacity": {
-      "condition": {"selection": "region_select", "value": 1},
-      "value": 0.2
-    },
-    "tooltip": [
-      {"field": "Country", "type": "nominal"},
-      {"field": "HappinessRank", "type": "ordinal", "title": "Happiness Rank"},
-      {
-        "field": "TotalAlcPerCapita",
-        "type": "quantitative",
-        "title": "Total Consumption (per capita)"
-      }
-    ]
-  },
-  "config": {}
+"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+			"width": 800,
+			"height": 600,
+			"title": "Alcohol Consumption by Type and Happiness Rank",
+			"data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness.csv"},
+			"encoding": {
+				"x": {
+					"field": "HappinessRank",
+					"type": "quantitative",
+					"sort": "ascending",
+					"axis": {
+						"labelAngle": 0,
+						"labelOverlap": "parity"
+					}
+				},
+				"y": {
+					"field": "TotalAlcPerCapita",
+					"type": "quantitative",
+					"axis": {
+						"labelOverlap": "parity"
+					}
+
+				}
+			},
+			"layer": [{
+				"selection":{
+					"region_select":{
+						"type": "single", "fields": ["Region"], "bind": "legend"
+					}
+				},
+				"mark": {"type": "circle", "size": "60"},
+				"encoding": {
+					"color": {
+						"field": "Region",
+						"scale": {"range": ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf", "#999999"]}
+					},
+
+					"opacity": {
+						"condition": {"selection": "region_select", "value": 0.8},
+						"value": 0.2
+					},
+
+					"tooltip": [
+					{"field": "Country", "type": "nominal"},
+					{"field": "HappinessRank", "type": "ordinal", "title" : "Happiness Rank"},
+					{"field": "TotalAlcPerCapita", "type": "quantitative", "title": "Total Consumption (per capita)"}]
+				}
+			},
+			{
+				"mark": {
+					"type": "text",
+					"align": "left",
+					"baseline": "top",
+					"fontSize": 11,
+					"fontStyle": "italic",
+					"dx": 12
+				},
+				"encoding": {
+					"text": {"field": "Country", "type": "nominal"},
+					"color": {"value": "black"},
+					"opacity": {
+						"condition": {
+							"test": "datum['Country'] == 'Australia' || datum['Country'] == 'Singapore'  || datum['Country'] == 'Syria' || datum['Country'] == 'China'|| datum['Country'] == 'Czech Republic'|| datum['Country'] == 'Denmark' || datum['Country'] == 'New Zealand' ",
+							"value": 1
+						},
+						"value": 0
+					},
+					"tooltip": [
+					{"field": "Country", "type": "nominal"},
+					{"field": "HappinessRank", "type": "ordinal", "title" : "Happiness Rank"},
+					{"field": "TotalAlcPerCapita", "type": "quantitative", "title": "Total Consumption (per capita)"}]
+				}
+			}
+			],
+			"config" : {}
 }
