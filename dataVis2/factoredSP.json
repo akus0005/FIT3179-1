@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Happiness Rank and Total Alcohol Consumption",
+  "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness.csv"},
+  "padding": 150,
+  "transform": [{"calculate": "datum[Parameter_Selection]", "as": "Parameter"}],
+  "params": [
+    {
+      "name": "Parameter_Selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "GDPPerCapita",
+          "Family",
+          "LifeExpectancy",
+          "Freedom",
+          "GovernmentTrust",
+          "Generosity"
+        ]
+      }
+    }
+  ],
+  "repeat": ["HappinessRank", "TotalAlcPerCapita"],
+  "spec": {
+    "autosize": {"type": "fit", "resize": true, "contains": "padding"},
+    "mark": {"type": "circle", "size": "60"},
+    "selection": {
+      "region_select": {
+        "type": "single",
+        "fields": ["Region"],
+        "bind": "legend"
+      }
+    },
+    "encoding": {
+      "y": {
+        "field": {"repeat": "repeat"},
+        "type": "quantitative",
+        "sort": "ascending",
+        "axis": {"labelAngle": 0, "labelOverlap": "parity"}
+      },
+      "x": {
+        "field": "Parameter",
+        "type": "quantitative",
+        "axis": {"labelOverlap": "parity", "title": "Selected Parameter"}
+      },
+      "color": {
+        "field": "Region",
+        "scale": {
+          "range": [
+            "#e41a1c",
+            "#377eb8",
+            "#4daf4a",
+            "#984ea3",
+            "#ff7f00",
+            "#ffff33",
+            "#a65628",
+            "#f781bf",
+            "#999999"
+          ]
+        }
+      },
+      "opacity": {
+        "condition": {"selection": "region_select", "value": 1},
+        "value": 0.2
+      },
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {
+          "field": "HappinessRank",
+          "type": "ordinal",
+          "title": "Happiness Rank"
+        },
+        {
+          "field": "TotalAlcPerCapita",
+          "type": "quantitative",
+          "title": "Total Consumption (per capita)"
+        },
+        {"field": "Parameter"}
+      ]
+    }
+  },
+  "config": {}
+}
