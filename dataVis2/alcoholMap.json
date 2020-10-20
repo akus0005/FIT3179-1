@@ -6,9 +6,11 @@
   "params": [
     {
       "name": "type_selection",
+      "value": "TotalAlc",
       "bind": {
         "input": "select",
-        "options": [null, "Beer", "Wine", "Spirit", "TotalAlc"]
+        "options": ["Beer", "Wine", "Spirit", "TotalAlc"],
+        "name": "Alcohol Type"
       }
     }
   ],
