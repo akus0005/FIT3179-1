@@ -70,6 +70,7 @@
         "baseline": "top",
         "fontSize": 11,
         "fontStyle": "italic",
+        "fontWeight": "bold",
         "dx": 12
       },
       "encoding": {
