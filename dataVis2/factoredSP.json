@@ -8,17 +8,18 @@
   "params": [
     {
       "name": "Parameter_Selection",
+      "value": "GDPPerCapita",
       "bind": {
         "input": "select",
         "options": [
-          null,
           "GDPPerCapita",
           "Family",
           "LifeExpectancy",
           "Freedom",
           "GovernmentTrust",
           "Generosity"
-        ]
+        ],
+        "name": "Select Parameter"
       }
     }
   ],
