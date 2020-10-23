@@ -48,7 +48,7 @@
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
           {"field": "Region", "type": "nominal"},
           {"field": "HappinessScore", "type": "quantitative", "title": "Happiness Score"},
-          {"field": "HappinessRank", "type": "quantitative", "title": "Happiness Rank}    
+          {"field": "HappinessRank", "type": "quantitative", "title": "Happiness Rank"}    
         ]
       }
     }
