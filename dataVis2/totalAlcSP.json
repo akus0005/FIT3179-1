@@ -67,7 +67,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "baseline": "top",
+        "baseline": "middle",
         "fontSize": 11,
         "fontStyle": "italic",
         "fontWeight": "bold",
