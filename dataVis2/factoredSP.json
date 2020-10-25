@@ -35,7 +35,8 @@
   ],
   "repeat": ["HappinessRank", "TotalAlcPerCapita"],
   "spec": {
-    "autosize": {"type": "fit", "resize": true, "contains": "padding"},
+    "height": "container",
+    "width": "container",
     "mark": {"type": "circle", "size": "60"},
     "selection": {
       "region_select": {
