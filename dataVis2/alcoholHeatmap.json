@@ -45,7 +45,12 @@
     "color": {
       "field": "Consumption",
       "type": "quantitative",
-      "scale": {"scheme": "yelloworangebrown"}
+      "scale": {"scheme": "yelloworangebrown"},
+      "legend" : {
+        "title": [
+          "Consumption", "Per Capita"
+        ]
+      }
     },
     "opacity": {
       "condition": {
