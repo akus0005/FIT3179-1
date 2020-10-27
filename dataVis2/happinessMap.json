@@ -42,7 +42,10 @@
         "color": {
           "field": "HappinessRank",
           "type": "quantitative",
-          "scale": {"scheme": {"name": "goldorange"}}
+          "scale": {"scheme": {"name": "goldorange"}},
+        "legend": {
+          "title": ["Happiness", "Rank"]
+        }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
