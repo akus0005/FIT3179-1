@@ -63,7 +63,11 @@
         "color": {
           "field": "Consumption",
           "type": "quantitative",
-          "scale": {"scheme": {"name": "yelloworangebrown"}}
+          "scale": {"scheme": {"name": "yelloworangebrown"}},
+          "legend": {
+            "title": [
+            "Consumption", "Per Capita"
+          ]}
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
