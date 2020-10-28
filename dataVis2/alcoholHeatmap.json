@@ -52,8 +52,7 @@
       "legend" : {
         "title": [
           "Consumption:", "Litres Per Capita"
-        ],
-        "orient": "bottom"
+        ]
       }
     },
     "opacity": {
