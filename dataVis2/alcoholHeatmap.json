@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
   "height": "container",
-  "title": "Alcohol Consumption and Happiness Rank",
+  "title": "",
+  "title": {"text": "Alcohol Consumption and Happiness Rank",
+  "subtitle": "Use the selection menu to highlight regions in the heatmap",
+  "subtitlePadding": 10},
   "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness2.csv"},
   "params": [
     {
