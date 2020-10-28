@@ -38,7 +38,7 @@
       "field": "HappinessRank",
       "type": "ordinal",
       "sort": ["1", "2"],
-      "axis": {"labelAngle": 0, "labelOverlap": "parity"}
+      "axis": {"labelAngle": 0, "labelOverlap": "parity", "title": "Happiness Rank"}
     },
     "y": {
       "field": "Alcohol",
