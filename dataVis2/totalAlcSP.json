@@ -3,6 +3,9 @@
   "width": "container",
   "height": "container",
   "title": ["Total Alcohol Consumption", "and Happiness Rank by Region"],
+  "title": {"text": ["Total Alcohol Consumption", "and Happiness Rank by Region"],
+  "subtitle": ["To highlight regions on the following scatterplots,", "click on the name of the region in the respective legend"],
+  "subtitlePadding": 10},
   "data": {"url": "https://mdudley98.github.io/FIT3179/alcoholHappiness.csv"},
   "encoding": {
     "x": {
