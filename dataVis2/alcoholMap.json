@@ -2,7 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
   "height": "container",
-  "title": "Alcohol Consumption Per Capita of 119 Surveyed Counties",
+   "title": {"text": "Alcohol Consumption Per Capita of 119 Surveyed Counties",
+  "subtitle": ["Use the selection menu underneath the map to show the consumption", "statistics of different kinds of alcohol, or the total alcohol consumption"],
+  "subtitlePadding": 10},
   "projection": {"type": "equalearth"},
   "params": [
     {
