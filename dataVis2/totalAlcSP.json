@@ -12,12 +12,12 @@
       "field": "HappinessRank",
       "type": "quantitative",
       "sort": "ascending",
-      "axis": {"labelAngle": 0, "labelOverlap": "parity"}
+      "axis": {"labelAngle": 0, "labelOverlap": "parity", "title": "Happiness Rank"}
     },
     "y": {
       "field": "TotalAlcPerCapita",
       "type": "quantitative",
-      "axis": {"labelOverlap": "parity"}
+      "axis": {"labelOverlap": "parity", "title": "Total Alcohol Per Capita (Litres)"}
     }
   },
   "layer": [
@@ -61,7 +61,7 @@
           {
             "field": "TotalAlcPerCapita",
             "type": "quantitative",
-            "title": "Total Consumption (per capita)"
+            "title": "Total Consumption (Litres Per Capita)"
           }
         ]
       }
@@ -96,7 +96,7 @@
           {
             "field": "TotalAlcPerCapita",
             "type": "quantitative",
-            "title": "Total Consumption (per capita)"
+            "title": "Total Consumption (Litres Per Capita)"
           }
         ]
       }
