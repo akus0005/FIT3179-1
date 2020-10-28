@@ -68,7 +68,7 @@
           "scale": {"scheme": {"name": "yelloworangebrown"}},
           "legend": {
             "title": [
-            "Consumption", "Per Capita"
+            "Consumption:", "Litres Per Capita"
           ]}
         },
         "tooltip": [
@@ -76,7 +76,7 @@
           {
             "field": "Consumption",
             "type": "quantitative",
-            "title": "Consumption (Per Capita)"
+            "title": "Consumption (Litres Per Capita)"
           },
           {"type": "nominal", "title": "Alcohol Type: type_selection"}
         ]
