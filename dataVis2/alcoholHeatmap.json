@@ -51,7 +51,7 @@
       "scale": {"scheme": "yelloworangebrown"},
       "legend" : {
         "title": [
-          "Consumption", "Per Capita"
+          "Consumption:", "Litres Per Capita"
         ],
         "orient": "bottom"
       }
@@ -70,7 +70,7 @@
       {
         "field": "Consumption",
         "type": "quantitative",
-        "title": "Consumption (per capita)"
+        "title": "Consumption (Litres per capita)"
       }
     ]
   },
