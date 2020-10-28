@@ -70,7 +70,7 @@
       {
         "field": "Consumption",
         "type": "quantitative",
-        "title": "Consumption (Litres per capita)"
+        "title": "Consumption (Litres Per Capita)"
       }
     ]
   },
