@@ -36,8 +36,8 @@
   ],
   "repeat": ["HappinessRank", "TotalAlcPerCapita"],
   "spec": {
-    "height": 500,
-    "width": 350,
+    "height": "container",
+    "width": "container",
     "mark": {"type": "circle", "size": "60"},
     "selection": {
       "region_select": {
