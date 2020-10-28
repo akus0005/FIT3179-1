@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": "container",
+  "width": 400,
   "height": "container",
   "title": "",
   "title": {"text": "Alcohol Consumption and Happiness Rank",
