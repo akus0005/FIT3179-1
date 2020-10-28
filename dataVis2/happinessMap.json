@@ -3,7 +3,8 @@
   "width": "container",
   "height": "container",
   "title": {"text": "Happiness Score of 119 Surveyed Counties",
-  "subtitle": ["Use the slider underneath the map to filter", "for the happiest countries and see how happy your country is."]},
+  "subtitle": ["Use the slider to filter for the happiest countries", "and see how happy your country is"],
+  "subtitlePadding": 10},
   "projection": {"type": "equalEarth"},
   "params": [
     {
