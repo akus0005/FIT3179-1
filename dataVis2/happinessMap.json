@@ -51,7 +51,7 @@
         "color": {
           "field": "HappinessRank",
           "type": "quantitative",
-          "scale": {"scheme": {"name": "goldorange"}},
+          "scale": {"scheme": {"name": "goldorange","extent": [1,0]}},         
         "legend": {
           "title": ["Happiness", "Rank"]
         }
