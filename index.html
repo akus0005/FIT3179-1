@@ -1,21 +1,218 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+	<title>Do We Drink Because We're Happy or to Forget?</title>
+	<!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+	<!-- Import vega-embed -->
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+	<!-- Import pure.css -->
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+	<!--style parameters-->
+	<style >
+		*{
+			font-family: 'Open Sans', sans-serif;
+		}
+		h1{
+			font-weight: 900;
+			font-size: 42px;
+		}
+		h2{ font-weight: 450;
+			font-size: 30px;
+
+		}
+		.page{
+			width: 1250px;
+			background-color: white;
+			margin: auto;
+			padding: 50px;
+			padding-top: 35px;
+			font-size: 16px;
+		}
+        .vis-containerTall{
+			width: 100%;
+			height: 500px;
+			padding-top: 20px;
+			
+		}
+		.vis-containerTallLeft{
+			width: 100%;
+			height: 500px;
+			padding-top: 20px;
+            padding-right: 20px;
+			
+		}
+        .vis-containerTallRight{
+			width: 100%;
+			height: 500px;
+			padding-top: 20px;
+            padding-left: 20px;
+			
+		}
+		.vis-containerLeft{
+			width: 100%;
+			height: 400px;
+			padding-top: 20px;
+            padding-right: 20px;
+			
+		}
+        .vis-containerRight{
+			width: 100%;
+			height: 400px;
+			padding-top: 20px;
+            padding-left: 20px;
+			
+		}
+		.description h2, h1{
+			margin-top: 0px;
+		}
+		.description-right {
+			padding-left: 20px;
+			padding-top: 20px;
+		}
+		.description-left {
+			padding-right: 20px;
+			padding-top: 20px;
+		}
+		.small-font{
+			font-size: 14px;
+			text-align: right;
+			padding-top: 15px;
+		}
+
+		.description-introLeft{
+			padding-right: 20px;
+		}
+		.description-introRight{
+			padding-left: 20px;
+		}
+	</style>
 </head>
 <body>
+	<div class="page">
+		<div class = "pure-g">
+			<div class="pure-u-1-1">
+				<h1> Do We Drink Because We're Happy, <br> or Do We Drink to Forget?</h1>
+				<h2> An analysis of the World Happiness Report for 2016 and alcohol consumption statistics.</h2>
+				<p> <i>Note: Only 119 of the 156 countries surveyed for the World Happiness Report had data available for acohol consumption. All countries that did not have alcohol consumption data available have been omitted. </i></p>
+			</div>
+		</div>
 
-<div id="vis"></div>
+		<div class = "pure-g">
+			<div class = "pure-u-1-2">
+				<div class = "description description-introLeft">
+					<p> Every year the World Happiness Report surveys 156 countries and ranks them according to how happy they are. This report is a publication by the Sustainable Development Solutions Network. Participants are asked to rank their life on a scale from zero to ten, with the worst possible life they can imagine for themselves being a zero, and the best possible being a ten. The countries are then given an aggregate score and ranked depending on their answers. The World Happiness Report also takes six facotrs into account when calculating each countries overall score. According to the World Happiness Report website, these six factors reflect what has been found in research to be important in explaining national-level differences in life evaluations. </p>
+				</div>    
+			</div>
+			<div class = "pure-u-1-2">
+				<div class = "description description-introRight">
+					<p> Alcoholic beverages are produced by fermenting grain, fruit juice or honey and have been consumed for thousands of years. Within the last few hundred years, attitudes towards alcohol have been changing as the effects that consumption have on the body are realised through research and social study. Alcohol is classed as a drug in many countries as it affects the way your body works, and can be addictive and toxic if a large enough quantity is consumed. Drinking alcohol can make you feel relaxed and happy, however as alcohol is a depressant it slows down your nervous system and subsequently affects the way that you think, feel, and behave. </p>
+				</div>
+			</div>
+		</div>
 
-<script type="text/javascript">
-  var spec = "https://mdudley98.github.io/FIT3179/testing/testvis.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+		<div class = "pure-g">
+			<div class = "pure-u-1-1">
+				<div id = "visHappinessMap" class = "vis-containerTallLeft">
+				</div>
+            </div>          
+		</div>
+        
+        <div class = "pure-g">
+			<div class = "pure-u-1-1">
+				<div id = "visAlcoholMap" class = "vis-containerTallRight">
+				</div>
+            </div>       
+		</div>
+        
+		<div class = "pure-g">
+			<div class = "pure-u-1-2">
+				<div class = "description description-left">
+					<p> Some countries are well known for their alcohol production, and some for their alcohol consumption. France is one of the most well known producers of wine in the world, along with it's Western European neighbours Spain and Portugal. It can be seen that wine is very commonly drunk throughout Western Europe due to this reason. Being similarly distanced from the equator to Western Europe, Southern Hemisphere wine heavyweights Argentina, Chile, Australia, and New Zealand also produce a high number of wines, and this is able to be seen through the consumption statistics.  </p>
+				</div>
+			</div>
+			<div class = "pure-u-1-2">
+				<div class = "description description-right">
+					<p> Eastern Europe and Eastern Asia tend to prefer spirits. This is because vodka is believed to have originated in Slavic countries and it can be produced by the fermentation of any starch or sugar rich plant matter. China is also home to the most consumed alcoholic beverage in the world, Baijiu. <br> Beer is commonly consumed throughout the world, this is because there are not many environmental factors that affect the producers' ability to brew beer, therefore it is widely produced and readily available. </p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class = "pure-g">
+			<div class = "pure-u-1-2">
+				<div id = "visHeatMap" class = "vis-containerLeft"></div>
+			</div>
+			<div class = "pure-u-1-2">
+				<div id = "visTotalAlcSP" class = "vis-containerRight"></div>
+			</div>
+		</div>
+
+		<div class = "pure-g">
+			<div class = "pure-u-1-2">
+				<div class = "description description-left">
+					<p>It can be seen from the charts above that countries that are happier tend to drink more. There is are significant clusters present in top left and bottom right of the scatter plot, some of the countries in these clusters have been annotated. It is clear that the top thirty happiest countries tent to drink a large amount of wine compared to those that are less happy. Most of the countries drink a high amount of beer, however approximately the twenty least happiest countries drink a very low amount. Spirits are favoured by countries that are ranked approximately in the middle of the spread.  </p>
+				</div>
+			</div>
+			<div class = "pure-u-1-2">
+				<div class = "description description-right">
+					<p>Alcohol is obviously not the only contributing factor to a country's happiness score. The scatterplots below shows each country's happiness rank and total alcohol consumption for each of the different factors that are taken into account in the World Happiness Report 2016. Some of these factors such as GDP per capita show a strong correlation with happiness and also alcohol consumption, and some such as freedom appear random.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class = "pure-g">
+			<div class = "pure-u-1-1">
+				<div id = "visFactorSP" class = "vis-containerTall">
+				</div>
+			</div>
+		</div>
+
+		<div class = "pure-g">
+			<div class = "pure-u-1-1 small-font">
+				<i>Data Sources: <br>https://www.kaggle.com/marcospessotto/happiness-and-alcohol-consumption <br> https://www.kaggle.com/unsdsn/world-happiness</i>
+			</div>
+		</div>
+
+
+
+
+	</div> <!--end page-->
+
+	<script type="text/javascript">
+		var happinessMap = "https://mdudley98.github.io/FIT3179/dataVis2/happinessMap.json";
+		var alcoholMap = "https://mdudley98.github.io/FIT3179/dataVis2/alcoholMap.json";
+		var heatMap = "https://mdudley98.github.io/FIT3179/dataVis2/alcoholHeatmap.json";
+		var totalAlcSP = "https://mdudley98.github.io/FIT3179/dataVis2/totalAlcSP.json";
+		var factorSP = "https://mdudley98.github.io/FIT3179/dataVis2/factoredSP.json";
+
+		vegaEmbed('#visHappinessMap', happinessMap, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+}).catch(console.error);
+
+		vegaEmbed('#visAlcoholMap', alcoholMap, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+		vegaEmbed('#visHeatMap', heatMap, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+		vegaEmbed('#visTotalAlcSP', totalAlcSP, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+		vegaEmbed('#visFactorSP', factorSP, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+
 </script>
+
 </body>
 </html>
